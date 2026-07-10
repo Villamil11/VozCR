@@ -18,7 +18,7 @@
 <nav>
     <a href="Index.php">Inicio</a>
     <a href="Reportar.php">Reportar</a>
-    <a href="Informes.php">Reportes</a>
+    <a href="Reportes.php">Reportes</a>
     <a href="Admin.php">Administrador</a>
 </nav>
 
