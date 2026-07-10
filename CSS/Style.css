@@ -191,3 +191,147 @@ footer{
     }
 
 }
+
+/* ---------- Formulario de Reportes ---------- */
+
+.formulario-reportar{
+
+    width:90%;
+    max-width:700px;
+    margin:50px auto;
+    background:white;
+    padding:35px;
+    border-radius:10px;
+    box-shadow:0 4px 10px rgba(0,0,0,.1);
+}
+
+.formulario-reportar h2{
+
+    text-align:center;
+    color:#083d77;
+    margin-bottom:25px;
+}
+
+.form-group{
+
+    margin-bottom:20px;
+}
+
+.form-group label{
+
+    display:block;
+    font-weight:bold;
+    margin-bottom:8px;
+    color:#083d77;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea{
+
+    width:100%;
+    padding:12px;
+    border:1px solid #ccc;
+    border-radius:8px;
+    font-size:16px;
+    outline:none;
+    transition:0.3s;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus{
+
+    border-color:#0d6efd;
+    box-shadow:0 0 5px rgba(13,110,253,.3);
+}
+
+.form-group textarea{
+
+    resize:vertical;
+    min-height:140px;
+}
+
+.boton-enviar{
+
+    width:100%;
+    padding:15px;
+    background:#28a745;
+    color:white;
+    border:none;
+    border-radius:8px;
+    font-size:17px;
+    font-weight:bold;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.boton-enviar:hover{
+
+    background:#218838;
+}
+
+/* ---------- Detalle del Reporte ---------- */
+
+.detalle-reporte{
+
+    width:90%;
+    max-width:800px;
+    margin:50px auto;
+    background:white;
+    padding:35px;
+    border-radius:10px;
+    box-shadow:0 4px 10px rgba(0,0,0,.1);
+}
+
+.detalle-reporte h2{
+
+    color:#083d77;
+    text-align:center;
+    margin-bottom:30px;
+}
+
+.detalle-item{
+
+    margin-bottom:20px;
+    padding-bottom:15px;
+    border-bottom:1px solid #ddd;
+}
+
+.detalle-item strong{
+
+    display:block;
+    color:#0d6efd;
+    margin-bottom:8px;
+}
+
+.detalle-item p{
+
+    margin:0;
+    color:#333;
+}
+
+.estado{
+
+    display:inline-block;
+    padding:8px 18px;
+    border-radius:20px;
+    color:white;
+    font-weight:bold;
+}
+
+.pendiente{
+
+    background:#dc3545;
+}
+
+.proceso{
+
+    background:#ffc107;
+    color:#000;
+}
+
+.resuelto{
+
+    background:#28a745;
+}

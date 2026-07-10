@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -16,15 +17,69 @@
 </header>
 
 <nav>
+<<<<<<< HEAD
+    <a href="index.php">Inicio</a>
+    <a href="reportar.php">Reportar</a>
+    <a href="reportes.php">Reportes</a>
+    <a href="admin.php">Administrador</a>
+</nav> 
+
+<!-- Main de reportes-->
+
+
+=======
     <a href="Index.php">Inicio</a>
     <a href="Reportar.php">Reportar</a>
     <a href="Informes.php">Reportes</a>
     <a href="Admin.php">Administrador</a>
 </nav>
+>>>>>>> 92747778587dc4252caf2fabf0f5e580c452b002
 
 <section class="hero">
 
+<<<<<<< HEAD
+<div class="formulario-reportar">
+
+<h2>Reportar Incidente</h2>
+
+<form action="#" method="post">
+
+<div class="form-group">
+<label>Título</label>
+<input type="text" name="titulo">
+</div>
+
+<div class="form-group">
+<label>Categoría</label>
+<select name="categoria">
+<option>Baches</option>
+<option>Basura</option>
+<option>Alumbrado</option>
+<option>Parques</option>
+<option>Seguridad</option>
+</select>
+</div>
+
+<div class="form-group">
+<label>Descripción</label>
+<textarea name="descripcion"></textarea>
+</div>
+
+<div class="form-group">
+<label>Ubicación</label>
+<input type="text" name="ubicacion">
+</div>
+
+<button class="boton-enviar" type="submit">
+Enviar Reporte
+</button>
+
+</form>
+
+</div>
+=======
     <h2>Reportar un incidente</h2>
+>>>>>>> 92747778587dc4252caf2fabf0f5e580c452b002
 
     <p>
         Complete el siguiente formulario para informar sobre un problema en su comunidad.
@@ -102,5 +157,9 @@ if(isset($_POST["nombre"])){
 <footer>
     <p>VozCR © 2026 | Proyecto Universitario - Universidad Fidélitas</p>
 </footer>
+<<<<<<< HEAD
 </body>
 </html>
+=======
+
+>>>>>>> cc0a3a21bf579c9835abfafad7514c648ed0f37d
