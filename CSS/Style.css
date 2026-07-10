@@ -257,3 +257,71 @@ footer{
 
     background:#28a745;
 }
+
+/* ---------- Lista de Reportes ---------- */
+
+.lista-reportes{
+
+    width:90%;
+    max-width:1000px;
+    margin:50px auto;
+}
+
+.lista-reportes h2{
+
+    text-align:center;
+    color:#083d77;
+    margin-bottom:35px;
+}
+
+.reporte-card{
+
+    background:white;
+    padding:25px;
+    margin-bottom:25px;
+    border-radius:10px;
+    box-shadow:0 4px 10px rgba(0,0,0,.1);
+    border-left:8px solid #0d6efd;
+}
+
+.reporte-card h3{
+
+    color:#0d6efd;
+    margin-bottom:15px;
+}
+
+.reporte-card p{
+
+    margin:10px 0;
+}
+
+.estado{
+
+    display:inline-block;
+    padding:6px 15px;
+    border-radius:20px;
+    color:white;
+    font-size:14px;
+    font-weight:bold;
+}
+
+.pendiente{
+
+    background:#dc3545;
+}
+
+.proceso{
+
+    background:#ffc107;
+    color:black;
+}
+
+.resuelto{
+
+    background:#28a745;
+}
+
+.reporte-card .btn{
+
+    margin-top:15px;
+}
