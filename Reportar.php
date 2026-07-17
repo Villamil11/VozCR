@@ -23,10 +23,6 @@
     <a href="reportar.php">Reportar</a>
     <a href="reportes.php">Reportes</a>
     <a href="admin.php">Administrador</a>
-    <a href="Index.php">Inicio</a>
-    <a href="Reportar.php">Reportar</a>
-    <a href="Informes.php">Reportes</a>
-    <a href="Admin.php">Administrador</a>
 </nav>
 
 <main>
