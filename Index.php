@@ -50,24 +50,77 @@
 
     <h2>¿Cómo funciona VozCR?</h2>
 
-    <div class="card">
-        <h3>📍 Reportar incidentes</h3>
-        <p>Registrar problemas de forma rápida y sencilla.</p>
-    </div>
+<div class="card">
+    <h3>📍 Reportar incidentes</h3>
+    <p>Registrar problemas de forma rápida y sencilla.</p>
 
-    <div class="card">
-        <h3>📷 Adjuntar evidencia</h3>
-        <p>Agregar imágenes y descripción del incidente.</p>
+    <div class="card-extra">
+        <p>
+            Los ciudadanos pueden registrar problemas de infraestructura
+            o servicios públicos desde la plataforma.
+        </p>
     </div>
+</div>
 
-    <div class="card">
-        <h3>📊 Dar seguimiento</h3>
-        <p>Consultar el estado del reporte en cualquier momento.</p>
+<div class="card">
+    <h3>📷 Adjuntar evidencia</h3>
+    <p>Agregar imágenes y descripción del incidente.</p>
+
+    <div class="card-extra">
+        <p>
+            El usuario puede proporcionar fotografías y detalles que
+            ayuden a identificar correctamente el problema.
+        </p>
     </div>
+</div>
 
-    <div class="card">
-        <h3>🏛️ Transparencia</h3>
-        <p>Mejor comunicación entre ciudadanos e instituciones.</p>
+<div class="card">
+    <h3>📊 Dar seguimiento</h3>
+    <p>Consultar el estado del reporte en cualquier momento.</p>
+
+    <div class="card-extra">
+        <p>
+            Los ciudadanos pueden consultar el progreso de los reportes
+            realizados y conocer su estado actual.
+        </p>
+    </div>
+</div>
+
+<div class="card">
+    <h3>🏛️ Transparencia</h3>
+    <p>Mejor comunicación entre ciudadanos e instituciones.</p>
+
+    <div class="card-extra">
+        <p>
+            La plataforma facilita la comunicación y permite dar mayor
+            visibilidad a los problemas de las comunidades.
+        </p>
+    </div>
+</div>
+
+</section>
+
+<section class="estadisticas">
+
+    <h2>VozCR en números</h2>
+
+    <div class="estadisticas-container">
+
+        <div class="estadistica">
+            <span class="numero" data-meta="125">0</span>
+            <p>Reportes registrados</p>
+        </div>
+
+        <div class="estadistica">
+            <span class="numero" data-meta="87">0</span>
+            <p>Reportes atendidos</p>
+        </div>
+
+        <div class="estadistica">
+            <span class="numero" data-meta="42">0</span>
+            <p>Ciudadanos participantes</p>
+        </div>
+
     </div>
 
 </section>
@@ -76,13 +129,55 @@
 
     <h2>Categorías disponibles</h2>
 
-    <ul>
-        <li>🚧 Huecos en carretera</li>
-        <li>🗑️ Basura acumulada</li>
-        <li>💡 Alumbrado público</li>
-        <li>🚓 Seguridad</li>
-        <li>🏗️ Daños en infraestructura</li>
-    </ul>
+        <input 
+        type="text" 
+        id="buscadorCategorias" 
+        placeholder="🔎 Buscar categoría..."
+    >
+
+<ul class="lista-categorias">
+
+    <li class="categoria">
+        <span>🚧 Huecos en carretera</span>
+        <div class="categoria-info">
+            Reportes relacionados con calles dañadas, baches y problemas
+            en la superficie de las carreteras.
+        </div>
+    </li>
+
+    <li class="categoria">
+        <span>🗑️ Basura acumulada</span>
+        <div class="categoria-info">
+            Reportes sobre acumulación de basura, residuos en espacios
+            públicos y problemas de recolección.
+        </div>
+    </li>
+
+    <li class="categoria">
+        <span>💡 Alumbrado público</span>
+        <div class="categoria-info">
+            Reportes sobre postes dañados, luminarias apagadas o problemas
+            con el alumbrado de las calles.
+        </div>
+    </li>
+
+    <li class="categoria">
+        <span>🚓 Seguridad</span>
+        <div class="categoria-info">
+            Reportes relacionados con situaciones que puedan representar
+            un problema para la seguridad de la comunidad.
+        </div>
+    </li>
+
+    <li class="categoria">
+        <span>🏗️ Daños en infraestructura</span>
+        <div class="categoria-info">
+            Reportes sobre parques, aceras, edificios públicos y otras
+            estructuras que presenten daños.
+        </div>
+    </li>
+
+</ul>
 
 </section>
 
@@ -103,6 +198,8 @@
 <footer>
     <p>VozCR © 2026 | Proyecto Universitario - Universidad Fidélitas</p>
 </footer>
+
+    <script src="js/index.js"></script>
 
 </body>
 </html>

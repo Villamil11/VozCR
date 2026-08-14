@@ -325,3 +325,111 @@ footer{
 
     margin-top:15px;
 }
+
+/* ---------- Cards interactivas ---------- */
+
+.card {
+    cursor: pointer;
+    transition: .3s;
+}
+
+.card:hover {
+    transform: translateY(-3px);
+}
+
+.card-extra {
+    display: none;
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px solid #ddd;
+}
+
+.card.active .card-extra {
+    display: block;
+}
+
+/* ---------- Categorías interactivas ---------- */
+
+.categoria {
+    cursor: pointer;
+    transition: .3s;
+}
+
+.categoria:hover {
+    transform: translateX(5px);
+}
+
+.categoria-info {
+    display: none;
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px solid #ddd;
+    color: #555;
+}
+
+.categoria.active .categoria-info {
+    display: block;
+}
+
+/* ---------- Buscador de categorías ---------- */
+
+#buscadorCategorias {
+    width: 100%;
+    padding: 14px 18px;
+    margin-bottom: 20px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+    outline: none;
+    transition: .3s;
+}
+
+#buscadorCategorias:focus {
+    border-color: #0d6efd;
+    box-shadow: 0 0 5px rgba(13, 110, 253, .25);
+}
+
+/* ---------- Estadísticas ---------- */
+
+.estadisticas {
+    width: 90%;
+    max-width: 1000px;
+    margin: 60px auto;
+    text-align: center;
+}
+
+.estadisticas h2 {
+    color: #083d77;
+    margin-bottom: 30px;
+}
+
+.estadisticas-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.estadistica {
+    background: white;
+    flex: 1;
+    padding: 30px 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,.1);
+}
+
+.numero {
+    display: block;
+    font-size: 3rem;
+    font-weight: bold;
+    color: #0d6efd;
+    margin-bottom: 10px;
+}
+
+.estadistica p {
+    font-weight: bold;
+    color: #555;
+}
+
+.estadisticas-container {
+    flex-direction: column;
+}
