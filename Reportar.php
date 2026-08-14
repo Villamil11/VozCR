@@ -1,5 +1,8 @@
-
+<?php
+require_once 'Config/database.php';
+?>
 <!DOCTYPE html>
+
 <html lang="es">
 
 <head>
@@ -106,6 +109,25 @@ if(isset($_POST["nombre"])){
     $ubicacion = $_POST["ubicacion"];
     $descripcion = $_POST["descripcion"];
 
+    $database = new Database();
+    $db = $database->connect();
+
+    $sql = "INSERT INTO contacto (nombre, correo, telefono, asunto, mensaje) VALUES (:nombre, :correo, :telefono, :asunto, :mensaje)";
+    $stmt = $db->prepare($sql);
+
+    $telefono = "S/N";
+    $asunto = $categoria;
+    $mensaje = "Ubicación: " . $ubicacion . " | " . $descripcion;
+
+    $stmt->bindParam(':nombre', $nombre);
+    $stmt->bindParam(':correo', $correo);
+    $stmt->bindParam(':telefono', $telefono);
+    $stmt->bindParam(':asunto', $asunto);
+    $stmt->bindParam(':mensaje', $mensaje);
+
+    $stmt->execute();
+
+
 ?>
 
 <section class="cards">
@@ -136,11 +158,12 @@ if(isset($_POST["nombre"])){
 }
 ?>
 
+</main>
+
 <footer>
 
     <p>VozCR © 2026 | Proyecto Universitario - Universidad Fidélitas</p>
 
-</main>
 </footer>
 
 </body>
