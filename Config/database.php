@@ -3,7 +3,7 @@
 class Database
 {
     private $host = "localhost"; 
-    private $db_name = "academia_musica";
+    private $db_name = "proyecto";
     private $username = "root";
     private $password = "";           
 

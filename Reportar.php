@@ -112,18 +112,16 @@ if(isset($_POST["nombre"])){
     $database = new Database();
     $db = $database->connect();
 
-    $sql = "INSERT INTO contacto (nombre, correo, telefono, asunto, mensaje) VALUES (:nombre, :correo, :telefono, :asunto, :mensaje)";
+    $sql = "INSERT INTO reportes (nombre, correo, categoria, ubicacion, descripcion) 
+            VALUES (:nombre, :correo, :categoria, :ubicacion, :descripcion)";
+            
     $stmt = $db->prepare($sql);
-
-    $telefono = "S/N";
-    $asunto = $categoria;
-    $mensaje = "Ubicación: " . $ubicacion . " | " . $descripcion;
 
     $stmt->bindParam(':nombre', $nombre);
     $stmt->bindParam(':correo', $correo);
-    $stmt->bindParam(':telefono', $telefono);
-    $stmt->bindParam(':asunto', $asunto);
-    $stmt->bindParam(':mensaje', $mensaje);
+    $stmt->bindParam(':categoria', $categoria);
+    $stmt->bindParam(':ubicacion', $ubicacion);
+    $stmt->bindParam(':descripcion', $descripcion);
 
     $stmt->execute();
 
