@@ -41,7 +41,6 @@ categorias.forEach(categoria => {
 
 
 
-// ---------- Buscador de categorías ----------
 
 const buscador = document.getElementById("buscadorCategorias");
 
@@ -71,7 +70,7 @@ buscador.addEventListener("input", function() {
 });
 
 
-// ---------- Estadísticas ----------
+
 
 const numeros = document.querySelectorAll(".numero");
 
