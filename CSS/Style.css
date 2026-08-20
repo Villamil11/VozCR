@@ -433,3 +433,65 @@ footer{
 .estadisticas-container {
     flex-direction: column;
 }
+
+/* Los cmapos de ven mas ordenados */
+.info form input,
+.info form select,
+.info form textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 15px;
+}
+
+.info form input:focus,
+.info form select:focus,
+.info form textarea:focus {
+    border-color: #0d6efd;
+    background: #f0f7ff;
+}
+
+.info form label {
+    font-weight: bold;
+    color: #083d77;
+}
+
+/* Separacion entre cada pregunta */
+.info form p {
+    margin-bottom: 20px;
+}
+
+/* El boton de "Enviar Reporte" */
+.info form input[type="submit"] {
+    background: #28a745;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    width: auto;
+}
+
+
+.info form input[type="submit"]:hover {
+    background: #218838;
+}
+
+
+.cards .card {
+    background: #f8fbff;
+    border-left: 5px solid #0d6efd;
+}
+
+.cards .card h3 {
+    color: #0d6efd;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 10px;
+}
+
+.cards .card p strong {
+    color: #083d77;
+}
