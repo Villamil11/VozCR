@@ -55,8 +55,6 @@
     color: #0f5132;
 }
 
-/* === Selector + botón dentro de la tabla === */
-
 .admin-tabla select {
     padding: 0.4rem 0.6rem;
     border-radius: 6px;
@@ -67,8 +65,6 @@
     padding: 0.4rem 0.9rem;
     font-size: 0.85rem;
 }
-
-/* === Barra de filtros arriba de la tabla === */
 
 .admin-filtros {
     display: flex;
@@ -84,8 +80,6 @@
     border: 1px solid #ccc;
 }
 
-/* === Mensaje de confirmación tras actualizar === */
-
 .mensaje-exito {
     background: #d1e7dd;
     color: #0f5132;
@@ -96,15 +90,24 @@
 }
 
 @keyframes fadeOut {
-    to { opacity: 0; height: 0; padding: 0; margin: 0; overflow: hidden; }
+    to {
+        opacity: 0;
+        height: 0;
+        padding: 0;
+        margin: 0;
+        overflow: hidden;
+    }
 }
 
-/* === Responsive: la tabla se vuelve tarjetas en pantallas chicas === */
-
 @media (max-width: 640px) {
-    .admin-tabla thead { display: none; }
+    .admin-tabla thead {
+        display: none;
+    }
 
-    .admin-tabla, .admin-tabla tbody, .admin-tabla tr, .admin-tabla td {
+    .admin-tabla,
+    .admin-tabla tbody,
+    .admin-tabla tr,
+    .admin-tabla td {
         display: block;
         width: 100%;
     }
