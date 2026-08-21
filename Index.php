@@ -18,6 +18,7 @@
     <a href="reportar.php">Reportar</a>
     <a href="reportes.php">Reportes</a>
     <a href="admin.php">Administrador</a>
+<a href="app/login.php" class="btn">Iniciar sesión</a>
 </nav>
 
 <section class="hero">

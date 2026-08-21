@@ -1,3 +1,17 @@
+<?php
+
+session_start();
+
+if (!isset($_SESSION['usuario_id'])) {
+    header("Location: /vozcr/app/login.php");
+    exit;
+}
+
+?>
+
+
+
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -20,6 +34,7 @@
     <a href="reportar.php">Reportar</a>
     <a href="reportes.php">Reportes</a>
     <a href="admin.php">Administrador</a>
+    <a href="app/logout.php" class="btn">Cerrar sesión</a>
 </nav>
 
 

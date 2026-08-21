@@ -2,10 +2,10 @@
 
 class Database
 {
-    private $host = "localhost"; 
+    private $host = "db";
     private $db_name = "proyecto";
     private $username = "root";
-    private $password = "";           
+    private $password = "root";
 
     public function connect()
     {
@@ -32,4 +32,3 @@ class Database
         return $conn;
     }
 }
-?>
