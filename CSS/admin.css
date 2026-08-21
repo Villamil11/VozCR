@@ -1,0 +1,131 @@
+/* === Panel de administración === */
+
+.admin-tabla {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1.5rem;
+    background: #fff;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.admin-tabla th,
+.admin-tabla td {
+    padding: 0.9rem 1rem;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+}
+
+.admin-tabla th {
+    background: #f4f6f8;
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    color: #444;
+}
+
+.admin-tabla tr:hover {
+    background: #fafbfc;
+}
+
+/* === Badges de estado (reutilizables en reportes.php y detalle también) === */
+
+.estado {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    border-radius: 999px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.estado.pendiente {
+    background: #fff3cd;
+    color: #8a6d00;
+}
+
+.estado.proceso {
+    background: #cfe2ff;
+    color: #084298;
+}
+
+.estado.resuelto {
+    background: #d1e7dd;
+    color: #0f5132;
+}
+
+/* === Selector + botón dentro de la tabla === */
+
+.admin-tabla select {
+    padding: 0.4rem 0.6rem;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+
+.admin-tabla .btn {
+    padding: 0.4rem 0.9rem;
+    font-size: 0.85rem;
+}
+
+/* === Barra de filtros arriba de la tabla === */
+
+.admin-filtros {
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+    margin: 1rem 0;
+}
+
+.admin-filtros select,
+.admin-filtros input {
+    padding: 0.5rem 0.8rem;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+
+/* === Mensaje de confirmación tras actualizar === */
+
+.mensaje-exito {
+    background: #d1e7dd;
+    color: #0f5132;
+    padding: 0.8rem 1.2rem;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    animation: fadeOut 0.4s ease 2.5s forwards;
+}
+
+@keyframes fadeOut {
+    to { opacity: 0; height: 0; padding: 0; margin: 0; overflow: hidden; }
+}
+
+/* === Responsive: la tabla se vuelve tarjetas en pantallas chicas === */
+
+@media (max-width: 640px) {
+    .admin-tabla thead { display: none; }
+
+    .admin-tabla, .admin-tabla tbody, .admin-tabla tr, .admin-tabla td {
+        display: block;
+        width: 100%;
+    }
+
+    .admin-tabla tr {
+        margin-bottom: 1rem;
+        border: 1px solid #eee;
+        border-radius: 8px;
+    }
+
+    .admin-tabla td {
+        border: none;
+        padding: 0.5rem 1rem;
+    }
+
+    .admin-tabla td::before {
+        content: attr(data-label);
+        font-weight: 600;
+        display: block;
+        font-size: 0.75rem;
+        color: #888;
+        text-transform: uppercase;
+    }
+}

@@ -1,147 +1,45 @@
-<?php
-
-session_start();
-
-if (!isset($_SESSION['usuario_id'])) {
-    header("Location: /vozcr/app/login.php");
-    exit;
-}
-
-?>
-
-
-
-
-<!DOCTYPE html>
-<html lang="es">
-
-<head>
-    <meta charset="UTF-8">
-    <title>Administrador</title>
-    <link rel="stylesheet" href="css/style.css">
-</head>
-
-<body>
-
-<header>
-    <h1>VozCR</h1>
-    <p>Panel de Administración</p>
-</header>
-
-
-<nav>
-    <a href="index.php">Inicio</a>
-    <a href="reportar.php">Reportar</a>
-    <a href="reportes.php">Reportes</a>
-    <a href="admin.php">Administrador</a>
-    <a href="app/logout.php" class="btn">Cerrar sesión</a>
-</nav>
-
-
-<main>
-
-
-<section class="info">
-
-    <h2>Panel del Administrador</h2>
-
-    <p>
-        Desde este módulo el administrador podrá gestionar
-        los reportes enviados por los ciudadanos y dar seguimiento
-        a los incidentes registrados.
-    </p>
-
-</section>
-
-
-
-<section class="cards">
-
-    <h2>Opciones disponibles</h2>
-
-
-    <div class="card">
-
-        <h3>📋 Revisar reportes</h3>
-
-        <p>
-            Consultar los problemas reportados por los ciudadanos.
-        </p>
-
-    </div>
-
-
-
-    <div class="card">
-
-        <h3>🔄 Actualizar estados</h3>
-
-        <p>
-            Cambiar el estado de los reportes según su avance.
-        </p>
-
-    </div>
-
-
-
-    <div class="card">
-
-        <h3>📊 Ver información</h3>
-
-        <p>
-            Consultar datos generales de los reportes registrados.
-        </p>
-
-    </div>
-
-
-</section>
-
-
-
-<section class="beneficios">
-
-    <h2>Reportes recientes</h2>
-
-
-    <ul>
-
-        <li>
-            🚧 Hueco en carretera - Estado: Pendiente
-        </li>
-
-        <li>
-            🗑️ Acumulación de basura - Estado: En proceso
-        </li>
-
-        <li>
-            💡 Alumbrado público dañado - Estado: Resuelto
-        </li>
-
-    </ul>
-
-
-</section>
-
-
-</main>
-
-
-
-<footer>
-
-<p>
-VozCR © 2026 | Proyecto Universitario - Universidad Fidélitas
-</p>
-
-</footer>
-
-
-</body>
-
-</html>
-
-</main>
-
-</body>
-</html>
+<div class="admin-filtros">
+    <select id="filtroEstado">
+        <option value="">Todos los estados</option>
+        <option value="pendiente">Pendiente</option>
+        <option value="proceso">En proceso</option>
+        <option value="resuelto">Resuelto</option>
+    </select>
+
+    <input type="text" id="filtroTexto" placeholder="🔎 Buscar por categoría o ubicación...">
+</div>
+
+<table class="admin-tabla" id="tablaReportes">
+    <thead>
+        <tr>
+            <th>Categoría</th>
+            <th>Ubicación</th>
+            <th>Estado</th>
+            <th>Acción</th>
+        </tr>
+    </thead>
+    <tbody>
+        <?php foreach ($reportes as $reporte): ?>
+        <tr data-estado="<?php echo htmlspecialchars($reporte['estado'] ?? 'pendiente'); ?>">
+            <td data-label="Categoría"><?php echo htmlspecialchars($reporte['categoria'], ENT_QUOTES, 'UTF-8'); ?></td>
+            <td data-label="Ubicación"><?php echo htmlspecialchars($reporte['ubicacion'], ENT_QUOTES, 'UTF-8'); ?></td>
+            <td data-label="Estado">
+                <span class="estado <?php echo $reporte['estado'] ?? 'pendiente'; ?>">
+                    <?php echo htmlspecialchars($reporte['estado'] ?? 'Pendiente', ENT_QUOTES, 'UTF-8'); ?>
+                </span>
+            </td>
+            <td data-label="Acción">
+                <form method="POST" action="admin.php" class="form-estado">
+                    <input type="hidden" name="reporte_id" value="<?php echo (int) $reporte['id']; ?>">
+                    <select name="nuevo_estado">
+                        <option value="pendiente" <?php echo ($reporte['estado'] ?? '') === 'pendiente' ? 'selected' : ''; ?>>Pendiente</option>
+                        <option value="proceso" <?php echo ($reporte['estado'] ?? '') === 'proceso' ? 'selected' : ''; ?>>En proceso</option>
+                        <option value="resuelto" <?php echo ($reporte['estado'] ?? '') === 'resuelto' ? 'selected' : ''; ?>>Resuelto</option>
+                    </select>
+                    <button type="submit" class="btn">Guardar</button>
+                </form>
+            </td>
+        </tr>
+        <?php endforeach; ?>
+    </tbody>
+</table>
