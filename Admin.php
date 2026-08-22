@@ -109,97 +109,58 @@ $reportes = $stmt->fetchAll(PDO::FETCH_ASSOC);
         Gestión de reportes
     </h2>
 
-    <main>
-
-    <h2>
-        Gestión de reportes
-    </h2>
-
-
     <?php
 
-    $totalReportes = count($reportes);
+$totalReportes = count($reportes);
 
-    $pendientes = 0;
-    $proceso = 0;
-    $resueltos = 0;
+$pendientes = 0;
+$proceso = 0;
+$resueltos = 0;
 
-    foreach ($reportes as $reporte) {
+foreach ($reportes as $reporte) {
 
-        $estado = $reporte['estado'] ?? 'pendiente';
+    $estado = $reporte['estado'] ?? 'pendiente';
 
-        if ($estado === 'pendiente') {
-            $pendientes++;
-        }
-
-        if ($estado === 'proceso') {
-            $proceso++;
-        }
-
-        if ($estado === 'resuelto') {
-            $resueltos++;
-        }
+    if ($estado === 'pendiente') {
+        $pendientes++;
     }
 
-    ?>
+    if ($estado === 'proceso') {
+        $proceso++;
+    }
 
+    if ($estado === 'resuelto') {
+        $resueltos++;
+    }
+}
 
-    <section class="estadisticas-admin">
+?>
 
-        <div class="estadistica-admin">
+<section class="estadisticas-admin">
 
-            <span>
-                <?php echo $totalReportes; ?>
-            </span>
+    <div class="estadistica-admin">
+        <span><?php echo $totalReportes; ?></span>
+        <p>Total de reportes</p>
+    </div>
 
-            <p>
-                Total de reportes
-            </p>
+    <div class="estadistica-admin pendiente-box">
+        <span><?php echo $pendientes; ?></span>
+        <p>Pendientes</p>
+    </div>
 
-        </div>
+    <div class="estadistica-admin proceso-box">
+        <span><?php echo $proceso; ?></span>
+        <p>En proceso</p>
+    </div>
 
+    <div class="estadistica-admin resuelto-box">
+        <span><?php echo $resueltos; ?></span>
+        <p>Resueltos</p>
+    </div>
 
-        <div class="estadistica-admin pendiente-box">
+</section>
 
-            <span>
-                <?php echo $pendientes; ?>
-            </span>
-
-            <p>
-                Pendientes
-            </p>
-
-        </div>
-
-
-        <div class="estadistica-admin proceso-box">
-
-            <span>
-                <?php echo $proceso; ?>
-            </span>
-
-            <p>
-                En proceso
-            </p>
-
-        </div>
-
-
-        <div class="estadistica-admin resuelto-box">
-
-            <span>
-                <?php echo $resueltos; ?>
-            </span>
-
-            <p>
-                Resueltos
-            </p>
-
-        </div>
-
-    </section>
-
-    <?php
+<?php
 
 $categorias = [
     'Huecos en carretera' => 0,
@@ -263,6 +224,8 @@ $totalCategorias = max($totalReportes, 1);
 
 </section>
 
+    
+
 
     <div class="admin-filtros">
 
@@ -294,9 +257,6 @@ $totalCategorias = max($totalReportes, 1);
         >
 
     </div>
-
-
-
 
 
     <table
